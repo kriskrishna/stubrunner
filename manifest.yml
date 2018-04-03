@@ -1,0 +1,13 @@
+---
+applications:
+- name: ere-mock-stubrunner
+  services:
+    - RABBITMQ_EWS_DEV
+    #- EUREKA_EWS_DEV
+    - ere-eureka-service
+  path: ./target/ere-stub-runner-boot-0.0.1.M1.jar
+  buildpack: java_buildpack_offline
+  env:
+    #SPRING_PROFILES_ACTIVE: cloud
+    #DEBUG: "true"
+    TRUST_CERTS: apps.system.pcf.cic.cvshealth.com, api.system.pcf.cic.cvshealth.com, apps.pcf.cic.cvshealth.com

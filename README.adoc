@@ -1,0 +1,3 @@
+# ERE Stub Runner Boot
+
+Spring Cloud Contract Stub Runner Boot is used for tests with ERE microservices for the deployment pipeline. Registers stubs in Eureka.

@@ -1,0 +1,31 @@
+stubrunner:
+  cloud.stubbed.discovery.enabled: false
+  repositoryRoot: ${REPO_WITH_JARS:https://cicd-artifactoryoss-01.pcf-east.cvshealthcloud.com/artifactory/cvs-ews-ere-releases-local}
+  ids:
+    - com.cvs.ews.ere.services.rule-proxy:ere-rule-proxy-stub:+:stubs
+    - com.cvs.ews.ere.services.qualification:ere-qualification-service:+:stubs
+    #- com.cvs.ews.ere.services.selection.state:ere-select-state-service:+:stubs
+    - com.cvs.ews.ere.services.stores:ere-stores-service:+:stubs
+    - com.cvs.rxconnect:ere-rx-connect-stub:+:stubs
+    #- com.example.github:github-webhook:+:stubs
+  #ids: com.cvs.ews.ere.services.qualification:ere-qualification-service:+:stubs:6566
+  #work-offline: true
+  idsToServiceIds:
+    ere-qualification-service: ere-qualification-service
+    ere-rule-proxy-service: ere-rule-proxy-service
+  cloud.eureka.enabled: true
+  #stubsMode: StubRunnerProperties.StubsMode.CLASSPATH
+server.port: ${PORT:8083}
+spring:
+  cloud.stream.defaultBinder: rabbit
+  #cloud.discovery.config.enabled: false
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false
+logging:
+  level:
+    org.springframework.cloud: error
+

@@ -1,0 +1,16 @@
+#spring.rabbitmq.addresses: ${vcap.services.github-rabbitmq.credentials.uri}
+#eureka:
+  #instance:
+    #hostname: ${vcap.application.uris[0]}
+    #nonSecurePort: 80
+
+
+#eureka:
+#  instance:
+#    hostname: ${APPLICATION_DOMAIN:localhost:8671}
+#    nonSecurePort: 80
+#    preferIpAddress: true
+#    client.enabled: true
+
+#spring:
+  #cloud.config.failFast: false
